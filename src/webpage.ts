@@ -92,7 +92,7 @@ const webpage = `<!DOCTYPE html>
 			<p>This tool allows you to easily view your schedule in your calendar, with all information presented clearly.</p>
 			<details>
 				<summary><b>But doesn't KU Loket already support this?</b></summary>
-				<p>Yes, but it jams everything into the event title. This tool cleans the data app, so it's easily digestable</p>
+				<p>Yes, but it jams everything into the event title. This tool cleans the data up, so it's easily digestable</p>
 				<p><img src="https://assets-cdn.gbgk.net/rooster-event-demo.png" style="width: 100%"/></p>
 			</details>
 
