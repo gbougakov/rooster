@@ -559,7 +559,7 @@ const subjects = [
 	},
 	{
 		ectsCode: 'HBA35C',
-		subjectName: 'French 3 (advanced)',
+		subjectName: 'French 3 (Advanced)',
 		teachers: [
 			{
 				name: 'J. Hengels',
@@ -589,7 +589,7 @@ const subjects = [
 	},
 	{
 		ectsCode: 'HBA47C',
-		subjectName: 'Dutch 3 (advanced)',
+		subjectName: 'Dutch 3 (Advanced)',
 		teachers: [
 			{
 				name: 'I. Verhoeven',
@@ -845,7 +845,7 @@ const subjects = [
 	},
 	{
 		ectsCode: 'HBA31C',
-		subjectName: 'French 1 (advanced)',
+		subjectName: 'French 1 (Advanced)',
 		teachers: [
 			{
 				name: 'J. Hengels',
@@ -873,7 +873,7 @@ const subjects = [
 	},
 	{
 		ectsCode: 'HBA33C',
-		subjectName: 'French 2 (advanced)',
+		subjectName: 'French 2 (Advanced)',
 		teachers: [
 			{
 				name: 'J. Hengels',
@@ -901,7 +901,7 @@ const subjects = [
 	},
 	{
 		ectsCode: 'HBA35C',
-		subjectName: 'French 3 (advanced)',
+		subjectName: 'French 3 (Advanced)',
 		teachers: [
 			{
 				name: 'J. Hengels',
@@ -951,7 +951,7 @@ const subjects = [
 	},
 	{
 		ectsCode: 'HBA45C',
-		subjectName: 'Dutch 1 (advanced)',
+		subjectName: 'Dutch 1 (Advanced)',
 		teachers: [
 			{
 				name: 'I. Verhoeven',
@@ -971,7 +971,7 @@ const subjects = [
 	},
 	{
 		ectsCode: 'HBA46C',
-		subjectName: 'Dutch 2 (advanced)',
+		subjectName: 'Dutch 2 (Advanced)',
 		teachers: [
 			{
 				name: 'I. Verhoeven',
@@ -991,7 +991,7 @@ const subjects = [
 	},
 	{
 		ectsCode: 'HBA47C',
-		subjectName: 'Dutch 3 (advanced)',
+		subjectName: 'Dutch 3 (Advanced)',
 		teachers: [
 			{
 				name: 'I. Verhoeven',
@@ -1135,7 +1135,7 @@ const subjects = [
 	},
 	{
 		ectsCode: 'D0E59A',
-		subjectName: 'Internship Project (bachelor)',
+		subjectName: 'Internship Project (Bachelor)',
 		teachers: [
 			{
 				name: 'S. Hoofdt',
@@ -1159,7 +1159,7 @@ const subjects = [
 	},
 	{
 		ectsCode: 'D0E60A',
-		subjectName: 'Internship Project (bachelor)',
+		subjectName: 'Internship Project (Bachelor)',
 		teachers: [
 			{
 				name: 'S. Hoofdt',
@@ -1241,7 +1241,7 @@ const subjects = [
 	},
 	{
 		ectsCode: 'D0E59A',
-		subjectName: 'Internship Project (bachelor)',
+		subjectName: 'Internship Project (Bachelor)',
 		teachers: [
 			{
 				name: 'S. Hoofdt',
@@ -1251,7 +1251,7 @@ const subjects = [
 	},
 	{
 		ectsCode: 'D0E60A',
-		subjectName: 'Internship Project (bachelor)',
+		subjectName: 'Internship Project (Bachelor)',
 		teachers: [
 			{
 				name: 'S. Hoofdt',
