@@ -1,18 +1,44 @@
-/**
- * Welcome to Cloudflare Workers! This is your first worker.
- *
- * - Run `npm run dev` in your terminal to start a development server
- * - Open a browser tab at http://localhost:8787/ to see your worker in action
- * - Run `npm run deploy` to publish your worker
- *
- * Bind resources to your worker in `wrangler.toml`. After adding bindings, a type definition for the
- * `Env` object can be regenerated with `npm run cf-typegen`.
- *
- * Learn more at https://developers.cloudflare.com/workers/
- */
+import ical from 'ical.js';
+import bbaSubjects from './programmes/bba.mjs';
 
 export default {
 	async fetch(request, env, ctx): Promise<Response> {
-		return new Response('Hello World!');
+		const url = new URL(request.url).searchParams.get('url');
+		const icsData = await fetch(url!).then((res) => res.text());
+		console.log(icsData);
+		const jcalData = ical.parse(icsData);
+		const comp = new ical.Component(jcalData);
+		const vevents = comp.getAllSubcomponents('vevent');
+
+		comp.updatePropertyWithValue('SUMMARY', 'Lessons Schedule');
+		// X-WR-CALNAME
+		comp.updatePropertyWithValue('X-WR-CALNAME', 'Lessons Schedule');
+
+		vevents.forEach((vevent) => {
+			const event = new ical.Event(vevent);
+
+			const ectsCode = event.summary.split(' ')[0];
+
+			const subject = bbaSubjects.find((subject) => subject.ectsCode === ectsCode.toUpperCase());
+
+			const originalSummary = event.summary;
+
+			event.summary = subject ? subject.subjectName : originalSummary.split(',')[0].split(' ')[1];
+
+			if (subject) {
+				event.description = `${subject.teachers.map((teacher) => `${teacher.name}\n${teacher.profile}`).join('\n\n')}
+
+Original Summary:
+${originalSummary}`;
+			}
+		});
+
+		const newJcalData = comp.toString();
+
+		return new Response(newJcalData, {
+			headers: {
+				'Content-Type': 'text/calendar',
+			},
+		});
 	},
 } satisfies ExportedHandler<Env>;

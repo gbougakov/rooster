@@ -6,7 +6,6 @@
     "deploy": "wrangler deploy",
     "dev": "wrangler dev",
     "start": "wrangler dev",
-    "test": "vitest",
     "cf-typegen": "wrangler types"
   },
   "devDependencies": {
@@ -15,5 +14,9 @@
     "typescript": "^5.5.2",
     "vitest": "2.0.5",
     "wrangler": "^3.60.3"
+  },
+  "dependencies": {
+    "ical.js": "^2.1.0",
+    "node-ical": "^0.19.0"
   }
 }
