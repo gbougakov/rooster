@@ -16,7 +16,7 @@ const subjects = [
 				profile: 'http://www.kuleuven.be/wieiswie/en/person/00173268',
 			},
 			{
-				name: 'J. Ramos González',
+				name: 'J. Ramos Gonz\u00e1lez',
 				profile: 'http://www.kuleuven.be/wieiswie/en/person/00174089',
 			},
 			{
@@ -62,10 +62,6 @@ const subjects = [
 			{
 				name: 'P. Paepen',
 				profile: 'http://www.kuleuven.be/wieiswie/en/person/00086011',
-			},
-			{
-				name: 'A. Praet',
-				profile: 'http://www.kuleuven.be/wieiswie/en/person/00003263',
 			},
 			{
 				name: 'W. Creemers',
@@ -117,10 +113,6 @@ const subjects = [
 				name: 'V. Ghijselinck',
 				profile: 'http://www.kuleuven.be/wieiswie/en/person/00057509',
 			},
-			{
-				name: 'S. Vergauwe',
-				profile: 'http://www.kuleuven.be/wieiswie/en/person/00060778',
-			},
 		],
 	},
 	{
@@ -139,10 +131,6 @@ const subjects = [
 				name: 'A. De Ridder',
 				profile: 'http://www.kuleuven.be/wieiswie/en/person/00071730',
 			},
-			{
-				name: 'N. Rogge',
-				profile: 'http://www.kuleuven.be/wieiswie/en/person/00049838',
-			},
 		],
 	},
 	{
@@ -156,10 +144,6 @@ const subjects = [
 			{
 				name: 'M. Corner',
 				profile: 'http://www.kuleuven.be/wieiswie/en/person/00054695',
-			},
-			{
-				name: 'I. Verhoeven',
-				profile: 'http://www.kuleuven.be/wieiswie/en/person/00071206',
 			},
 		],
 	},
@@ -180,7 +164,7 @@ const subjects = [
 				profile: 'http://www.kuleuven.be/wieiswie/en/person/00173268',
 			},
 			{
-				name: 'J. Ramos González',
+				name: 'J. Ramos Gonz\u00e1lez',
 				profile: 'http://www.kuleuven.be/wieiswie/en/person/00174089',
 			},
 			{
@@ -278,7 +262,7 @@ const subjects = [
 				profile: 'http://www.kuleuven.be/wieiswie/en/person/00173268',
 			},
 			{
-				name: 'J. Ramos González',
+				name: 'J. Ramos Gonz\u00e1lez',
 				profile: 'http://www.kuleuven.be/wieiswie/en/person/00174089',
 			},
 		],
@@ -294,10 +278,6 @@ const subjects = [
 			{
 				name: 'W. Goemans',
 				profile: 'http://www.kuleuven.be/wieiswie/en/person/00071316',
-			},
-			{
-				name: 'S. Van Gulck',
-				profile: 'http://www.kuleuven.be/wieiswie/en/person/00011459',
 			},
 			{
 				name: 'L. Egholm',
@@ -405,10 +385,6 @@ const subjects = [
 		ectsCode: 'HBA15C',
 		subjectName: 'Introduction to Methods in Operational Research',
 		teachers: [
-			{
-				name: 'D. De Bock',
-				profile: 'http://www.kuleuven.be/wieiswie/en/person/00002527',
-			},
 			{
 				name: 'D. De Bock',
 				profile: 'http://www.kuleuven.be/wieiswie/en/person/00002527',
@@ -609,10 +585,6 @@ const subjects = [
 				name: 'E. Snauwaert',
 				profile: 'http://www.kuleuven.be/wieiswie/en/person/00012658',
 			},
-			{
-				name: 'F. Vanoverberghe',
-				profile: 'http://www.kuleuven.be/wieiswie/en/person/00062644',
-			},
 		],
 	},
 	{
@@ -672,10 +644,6 @@ const subjects = [
 			{
 				name: 'S. Kerremans',
 				profile: 'http://www.kuleuven.be/wieiswie/en/person/00071054',
-			},
-			{
-				name: 'P. Vanmol',
-				profile: 'http://www.kuleuven.be/wieiswie/en/person/00071303',
 			},
 			{
 				name: 'A. De Winter',
@@ -743,10 +711,6 @@ const subjects = [
 				name: 'A. De Ridder',
 				profile: 'http://www.kuleuven.be/wieiswie/en/person/00071730',
 			},
-			{
-				name: 'N. Rogge',
-				profile: 'http://www.kuleuven.be/wieiswie/en/person/00049838',
-			},
 		],
 	},
 	{
@@ -780,7 +744,7 @@ const subjects = [
 				profile: 'http://www.kuleuven.be/wieiswie/en/person/00173268',
 			},
 			{
-				name: 'J. Ramos González',
+				name: 'J. Ramos Gonz\u00e1lez',
 				profile: 'http://www.kuleuven.be/wieiswie/en/person/00174089',
 			},
 		],
@@ -1007,10 +971,6 @@ const subjects = [
 				name: 'E. Snauwaert',
 				profile: 'http://www.kuleuven.be/wieiswie/en/person/00012658',
 			},
-			{
-				name: 'F. Vanoverberghe',
-				profile: 'http://www.kuleuven.be/wieiswie/en/person/00062644',
-			},
 		],
 	},
 	{
@@ -1025,10 +985,6 @@ const subjects = [
 				name: 'E. Snauwaert',
 				profile: 'http://www.kuleuven.be/wieiswie/en/person/00012658',
 			},
-			{
-				name: 'F. Vanoverberghe',
-				profile: 'http://www.kuleuven.be/wieiswie/en/person/00062644',
-			},
 		],
 	},
 	{
@@ -1042,10 +998,6 @@ const subjects = [
 			{
 				name: 'E. Snauwaert',
 				profile: 'http://www.kuleuven.be/wieiswie/en/person/00012658',
-			},
-			{
-				name: 'F. Vanoverberghe',
-				profile: 'http://www.kuleuven.be/wieiswie/en/person/00062644',
 			},
 		],
 	},
@@ -1102,10 +1054,6 @@ const subjects = [
 			{
 				name: 'H. De Groote',
 				profile: 'http://www.kuleuven.be/wieiswie/en/person/00071024',
-			},
-			{
-				name: 'A. Van Nuffel',
-				profile: 'http://www.kuleuven.be/wieiswie/en/person/00071249',
 			},
 		],
 	},
@@ -1263,20 +1211,12 @@ const subjects = [
 				name: 'T. Verbeke',
 				profile: 'http://www.kuleuven.be/wieiswie/en/person/00063587',
 			},
-			{
-				name: 'T. Verbeke',
-				profile: 'http://www.kuleuven.be/wieiswie/en/person/00063587',
-			},
 		],
 	},
 	{
 		ectsCode: 'HBH85E',
 		subjectName: 'Management humain (USL)',
 		teachers: [
-			{
-				name: 'T. Verbeke',
-				profile: 'http://www.kuleuven.be/wieiswie/en/person/00063587',
-			},
 			{
 				name: 'T. Verbeke',
 				profile: 'http://www.kuleuven.be/wieiswie/en/person/00063587',
