@@ -725,10 +725,6 @@ const subjects = [
 				name: 'A. De Ridder',
 				profile: 'http://www.kuleuven.be/wieiswie/en/person/00071730',
 			},
-			{
-				name: 'N. Rogge',
-				profile: 'http://www.kuleuven.be/wieiswie/en/person/00049838',
-			},
 		],
 	},
 	{
