@@ -47,3 +47,19 @@ console.log(JSON.stringify(data, null, 2));
 ```
 
 This data is publically available on the KU Leuven website, so there should be no privacy concerns. However, if you are a teacher and you do not want your name to be displayed, please let me know at [rooster@gbgk.me](mailto:rooster@gbgk.me) and I will remove it
+
+## Handling Special Lecture Keywords
+
+Rooster now includes a feature to handle special lecture keywords like 'practical lecture' and 'tutorial'. When these keywords are found in the event summary, the corresponding text is added in parentheses to the subject name.
+
+### Example
+
+If the event is a practical lecture on microeconomics, the name will be modified as follows:
+
+- Original: "Microeconomics for Business practical lecture"
+- Modified: "Microeconomics for Business (Practice)"
+
+Similarly, for tutorials:
+
+- Original: "Microeconomics for Business tutorial"
+- Modified: "Microeconomics for Business (Tutorial)"
