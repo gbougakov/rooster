@@ -2,6 +2,11 @@ import ical from 'ical.js';
 import bbaSubjects from './programmes/bba';
 import webpage from './webpage';
 
+const specialLectureKeywords = {
+	'practical lecture': 'Practice',
+	'tutorial': 'Tutorial'
+};
+
 export default {
 	async fetch(request, env, ctx): Promise<Response> {
 		const url = new URL(request.url);
@@ -44,6 +49,13 @@ export default {
 				const originalSummary = event.summary;
 
 				event.summary = subject ? subject.subjectName : originalSummary.split(',')[0].split(' ')[1];
+
+				for (const [keyword, text] of Object.entries(specialLectureKeywords)) {
+					if (originalSummary.toLowerCase().includes(keyword)) {
+						event.summary += ` (${text})`;
+						break;
+					}
+				}
 
 				if (subject) {
 					event.description = `${subject.teachers.map((teacher) => `${teacher.name}\n${teacher.profile}`).join('\n\n')}
