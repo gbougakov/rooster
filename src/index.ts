@@ -1,11 +1,20 @@
 import ical from 'ical.js';
 import bbaSubjects from './programmes/bba';
 import webpage from './webpage';
+import iab from './inappbrowser';
 
 export default {
 	async fetch(request, env, ctx): Promise<Response> {
 		const url = new URL(request.url);
 		if (url.pathname === '/') {
+			if (request.headers.get('User-Agent')?.includes('Instagram')) {
+				return new Response(iab("Instagram"), {
+					headers: {
+						'Content-Type': 'text/html',
+					},
+				});
+			}
+
 			return new Response(
 				webpage,
 				{
@@ -63,6 +72,12 @@ ${originalSummary}`;
 			return new Response(newJcalData, {
 				headers: {
 					'Content-Type': 'text/calendar',
+				},
+			});
+		} else if (url.pathname === '/inappbrowser') {
+			return new Response(iab("in-app"), {
+				headers: {
+					'Content-Type': 'text/html',
 				},
 			});
 		}
