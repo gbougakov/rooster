@@ -348,6 +348,16 @@ const subjects = [
 		],
 	},
 	{
+		ectsCode: 'HBA10B',
+		subjectName: 'Advanced Accounting and Valuation Topics',
+		teachers: [
+			{
+				name: 'A. Liss',
+				profile: 'http://www.kuleuven.be/wieiswie/en/person/00170046',
+			},
+		],
+	},
+	{
 		ectsCode: 'HBA15A',
 		subjectName: 'Economic Sociology',
 		teachers: [
