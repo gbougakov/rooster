@@ -59,6 +59,8 @@ export default {
 
 				event.summary = subject ? subject.subjectName : originalSummary.split(',')[0].split(' ')[1];
 
+				event.uid = event.uid.replace('@timeedit.com', '@rooster.gbgk.me')
+
 				for (const [keyword, text] of Object.entries(specialLectureKeywords)) {
 					if (originalSummary.toLowerCase().includes(keyword)) {
 						event.summary += ` (${text})`;
@@ -70,7 +72,9 @@ export default {
 					event.description = `${subject.teachers.map((teacher) => `${teacher.name}\n${teacher.profile}`).join('\n\n')}
 
 Original Summary:
-${originalSummary}`;
+${originalSummary}
+
+Feed version: 2`;
 				} else {
 					event.description = `Cannot find teachers for ECTS code ${ectsCode}. Please email rooster@gbgk.me to let me know.
 
