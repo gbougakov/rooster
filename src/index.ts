@@ -4,8 +4,20 @@ import webpage from './webpage';
 import iab from './inappbrowser';
 
 const specialLectureKeywords = {
+	'weblecture': 'Online Lecture',
+	'workshop': 'Workshop',
+	'guest lecture': 'Guest Lecture',
+	'kick-off': 'Kick-off',
+	'kick off': 'Kick-off',
+	'matchmaking': 'Matchmaking',
+	'coaching': 'Coaching',
+	'final exam': 'Exam',
+	'mandatory test': 'Test',
+	'presentation': 'Presentation',
 	'practical lecture': 'Practice',
-	'tutorial': 'Tutorial'
+	'tutorial': 'Tutorial',
+	'werkcollege': 'Tutorial',
+	'hoorcollege': 'Lecture'
 };
 
 export default {
@@ -69,7 +81,7 @@ export default {
 				}
 
 				if (subject) {
-					event.description = `${subject.teachers.map((teacher) => `${teacher.name}\n${teacher.profile}`).join('\n\n')}
+					event.description = `Teachers: ${subject.teachers.join(', ')}
 
 Original Summary:
 ${originalSummary}

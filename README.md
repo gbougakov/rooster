@@ -9,44 +9,86 @@ Rooster is able to display data for any programme, but for extended data (like t
 To add a programme to the list of available programmes, you can add a new file to the `src/programmes` directory. You can generate the data required for the file by running the following script in DevTools on the programme page in Onderwijsaanbod:
 
 ```javascript
-// Get all rows with the class 'opo_row'
-let rows = document.querySelectorAll('tr.opo_row');
+// DevTools script to extract course data from KU Leuven course table
+const extractCourseData = () => {
+  // Select all module rows
+  const moduleRows = document.querySelectorAll('tr.module-row');
 
-// Array to store the results
-let data = [];
+  // Array to store extracted data
+  const courses = [];
 
-// Loop through each row
-rows.forEach(row => {
-    // Extract the ECTS code
-    let ectsCode = row.querySelector('td.code') ? row.querySelector('td.code').textContent.trim() : '';
+  moduleRows.forEach(row => {
+    try {
+      // Extract ECTS code (from stage-code cell or from the row ID)
+      let ectsCode = '';
+      const codeCell = row.querySelector('.stage-code');
+      if (codeCell) {
+        ectsCode = codeCell.textContent.trim();
+      } else if (row.id && row.id.startsWith('module')) {
+        // Fallback: extract from row ID (remove 'module' prefix)
+        ectsCode = row.id.replace('module', '');
+      }
 
-    // Extract the subject name
-    let subjectElement = row.querySelector('td.opleidingsonderdeel a');
-    let subjectName = subjectElement ? subjectElement.textContent.trim() : '';
+      // Extract subject name from the link in module-title cell
+      let subjectName = '';
+      const titleLink = row.querySelector('.module-title a');
+      if (titleLink) {
+        subjectName = titleLink.textContent.trim();
+      }
 
-    // Extract the list of teachers
-    let teacherElements = row.querySelectorAll('td.docent div.print_only li a');
-    let teachers = Array.from(teacherElements).map(teacher => ({
-        name: teacher.textContent.trim().replace(".", ". "),
-        profile: teacher.getAttribute('href')
-    }));
+      // Extract teachers from the instructors section
+      const teachers = [];
 
-    // Create an object for the current row
-    let courseData = {
+      // Try to find instructors in the print version div first (more complete)
+      let instructorLinks = row.querySelectorAll('.instructors a');
+
+      // If not found, try the web version
+      if (instructorLinks.length === 0) {
+        instructorLinks = row.querySelectorAll('.instructors-container a');
+      }
+
+      instructorLinks.forEach(link => {
+        const teacherName = link.textContent.trim();
+        if (teacherName) {
+          teachers.push(teacherName);
+        }
+      });
+
+      // Create course object
+      const courseData = {
         ectsCode: ectsCode,
         subjectName: subjectName,
         teachers: teachers
-    };
+      };
 
-    // Add the object to the array
-    data.push(courseData);
-});
+      // Only add if we have at least the code and subject name
+      if (ectsCode && subjectName) {
+        courses.push(courseData);
+      }
 
-// Print the extracted data as JSON
-console.log(JSON.stringify(data, null, 2));
+    } catch (error) {
+      console.error('Error processing row:', error, row);
+    }
+  });
+
+  return courses;
+};
+
+// Run the extraction
+const courseData = extractCourseData();
+
+// Display results
+console.log('Extracted course data:');
+console.log(JSON.stringify(courseData, null, 2));
+
+// Also display as a table for easy viewing
+console.table(courseData);
+
+// Return the data
+courseData;
 ```
 
-This data is publically available on the KU Leuven website, so there should be no privacy concerns. However, if you are a teacher and you do not want your name to be displayed, please let me know at [rooster@gbgk.me](mailto:rooster@gbgk.me) and I will remove it
+The extracted data includes course codes, subject names, and teacher names (as simple strings). This data is publicly available on the KU Leuven website, so there should be no privacy concerns. However, if you are a teacher and you do not want your name to be displayed, please let me know at [rooster@gbgk.me](mailto:rooster@gbgk.me) and I will remove it.
 
 ## Handling Special Lecture Keywords
 
