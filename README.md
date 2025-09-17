@@ -6,11 +6,11 @@ Rooster is a tool allows you to easily view your KU Leuven schedule in your cale
 
 Rooster is able to display data for any programme, but for extended data (like teachers), the programme data must be added to the `src/programmes` folder.
 
-## Automatically (ask Claude to add it)
+### Automatically (ask Claude to add it)
 
 [Create an issue](https://github.com/gbougakov/rooster/issues/new?template=request-programme-addition.md) mentioning the link to the programme page, and don't forget to tag `@claude`. Claude will automatically look up the page for the programme, extract all required data and make a pull request.
 
-## Doing it manually (or if you are Claude)
+### Doing it manually (or if you are Claude)
 
 To add a programme to the list of available programmes, you can add a new file to the `src/programmes` directory. You can generate the data required for the file by running the following script in DevTools on the programme page in Onderwijsaanbod:
 
