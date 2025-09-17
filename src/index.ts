@@ -1,5 +1,6 @@
 import ical from 'ical.js';
 import bbaSubjects from './programmes/bba';
+import businessEngineeringSubjects from './programmes/business_engineering';
 import webpage from './webpage';
 import iab from './inappbrowser';
 
@@ -60,12 +61,15 @@ export default {
 			comp.updatePropertyWithValue('SUMMARY', 'Lessons Schedule');
 			comp.updatePropertyWithValue('X-WR-CALNAME', 'Lessons Schedule');
 
+			// Combine subjects from all programmes
+			const allSubjects = [...bbaSubjects, ...businessEngineeringSubjects];
+
 			vevents.forEach((vevent) => {
 				const event = new ical.Event(vevent);
 
 				const ectsCode = event.summary.split(' ')[0];
 
-				const subject = bbaSubjects.find((subject) => subject.ectsCode === ectsCode.toUpperCase());
+				const subject = allSubjects.find((subject) => subject.ectsCode === ectsCode.toUpperCase());
 
 				const originalSummary = event.summary;
 
