@@ -81,7 +81,7 @@ export default {
 				for (const [keyword, text] of Object.entries(specialLectureKeywords)) {
 					if (originalSummary.toLowerCase().includes(keyword)) {
 						event.summary += ` (${text})`;
-						// break; -- just in case, to not miss any important info
+						break;
 					}
 				}
 
