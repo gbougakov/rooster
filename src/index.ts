@@ -18,7 +18,8 @@ const specialLectureKeywords = {
 	'practical lecture': 'Practice',
 	'tutorial': 'Tutorial',
 	'werkcollege': 'Tutorial',
-	'hoorcollege': 'Lecture'
+	'hoorcollege': 'Lecture',
+	'begeleide oefensessie': 'Guided practice session',
 };
 
 export default {
@@ -80,7 +81,7 @@ export default {
 				for (const [keyword, text] of Object.entries(specialLectureKeywords)) {
 					if (originalSummary.toLowerCase().includes(keyword)) {
 						event.summary += ` (${text})`;
-						break;
+						// break; -- just in case, to not miss any important info
 					}
 				}
 
