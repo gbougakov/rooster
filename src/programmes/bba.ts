@@ -191,7 +191,7 @@ const subjects = [
   },
   {
     ectsCode: 'HBA27C',
-    subjectName: 'Research Methods 3',
+    subjectName: 'Statistical Modelling',
     teachers: ['M.Meulders'],
   },
   {
