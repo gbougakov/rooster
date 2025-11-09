@@ -53,6 +53,23 @@ export default {
 				});
 			}
 
+			// Parse and validate optional filter parameter
+			const filterParam = url.searchParams.get('filter');
+			let filterRegex: RegExp | null = null;
+
+			if (filterParam) {
+				try {
+					filterRegex = new RegExp(filterParam, 'i'); // Case-insensitive matching
+				} catch (error) {
+					return new Response(`Invalid RegEx pattern: ${error instanceof Error ? error.message : 'Unknown error'}`, {
+						status: 400,
+						headers: {
+							'Content-Type': 'text/plain',
+						},
+					});
+				}
+			}
+
 			const icsData = await fetch(calendarURL!).then((res) => res.text());
 			console.log(icsData);
 			const jcalData = ical.parse(icsData);
@@ -67,6 +84,12 @@ export default {
 
 			vevents.forEach((vevent) => {
 				const event = new ical.Event(vevent);
+
+				// Apply RegEx filter to exclude matching events
+				if (filterRegex && filterRegex.test(event.summary)) {
+					comp.removeSubcomponent(vevent);
+					return; // Skip this event
+				}
 
 				const ectsCode = event.summary.split(' ')[0];
 
