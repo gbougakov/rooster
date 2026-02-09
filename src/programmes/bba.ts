@@ -340,6 +340,11 @@ const subjects = [
     teachers: ['K.De Bruyne'],
   },
   {
+    ectsCode: 'HBA86B',
+    subjectName: 'Quantitative Research Project',
+    teachers: ['M.Meulders'],
+  },
+  {
     ectsCode: 'HBH85E',
     subjectName: 'Management humain (UC Louvain)',
     teachers: ['T.Verbeke'],
