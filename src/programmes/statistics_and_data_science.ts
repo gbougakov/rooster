@@ -3,6 +3,23 @@
 // Source: https://onderwijsaanbod.kuleuven.be/opleidingen/e/SC_58938898?faseIds=1%2C2
 // Empty teacher lists indicate that no instructors are listed in the catalogue.
 const subjects = [
+  // Teaching-activity codes used by TimeEdit differ from the parent course codes.
+  // Verified in the source catalogue's activity sets on 2026-09-20.
+  {
+    ectsCode: 'D0M62A',
+    subjectName: 'Multivariate Statistics',
+    teachers: ['M.Meulders'],
+  },
+  {
+    ectsCode: 'G0A21A',
+    subjectName: 'Statistical Software',
+    teachers: ['A.Carbonez', 'M.Luyts'],
+  },
+  {
+    ectsCode: 'G0Z53A',
+    subjectName: 'Data Management',
+    teachers: ['J.Van den Bussche'],
+  },
   {
     ectsCode: 'D0C15A',
     subjectName: 'Macro-finance',
