@@ -16,6 +16,11 @@ const subjects = [
     teachers: ['A.Carbonez', 'M.Luyts'],
   },
   {
+    ectsCode: 'G0Z39A',
+    subjectName: 'Machine Learning Operations (MLOps) for Data Science',
+    teachers: ['M.Luyts', 'J.De Spiegeleer'],
+  },
+  {
     ectsCode: 'G0Z53A',
     subjectName: 'Data Management',
     teachers: ['J.Van den Bussche'],
