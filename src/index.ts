@@ -4,6 +4,7 @@ import businessEngineeringSubjects from './programmes/business_engineering';
 import statisticsAndDataScienceSubjects from './programmes/statistics_and_data_science';
 import webpage from './webpage';
 import iab from './inappbrowser';
+import { formatLocation } from './locations';
 
 const specialLectureKeywords = {
 	'weblecture': 'Online Lecture',
@@ -99,6 +100,9 @@ export default {
 				const originalSummary = event.summary;
 
 				event.summary = subject ? subject.subjectName : originalSummary.split(',')[0].split(' ')[1];
+				if (event.location) {
+					event.location = formatLocation(event.location);
+				}
 
 				event.uid = event.uid.replace('@timeedit.com', '@rooster.gbgk.me')
 
